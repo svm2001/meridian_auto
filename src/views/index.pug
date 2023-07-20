@@ -1,0 +1,13 @@
+extends layouts/Main
+
+include components/header
+include components/footer
+include components/scrollTop
+
+block title
+  title
+block content
+  +scrollToTop
+  .wrapper
+    +header
+    +footer

@@ -1,0 +1,18 @@
+extends layouts/Main
+
+block title
+  title Страница недоступна
+block content
+  .unavailable
+    .container
+      .unavailable__titles
+        h2.title.services__title Ошибка 404
+        h3.subtitle.services__subtitle
+          span Страница&nbsp;
+          span не найдена
+      a(href="/").btn__orange Перейти на главную
+        svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg")
+          g(id="arrow")
+            path(id="Vector" d="M17.4924 2.50754L2.5 17.5M16.6086 15.7658C15.9539 15.1112 15.6237 13.4849 15.4571 12.0077C15.2427 10.1058 15.3254 8.1735 15.7751 6.31228C16.1119 4.91861 16.6553 3.35966 17.4999 2.515M4.23421 3.39142C4.88883 4.04604 6.51507 4.37627 7.99232 4.54286C9.89427 4.75734 11.8265 4.67464 13.6877 4.22487C15.0814 3.88809 16.6404 3.34472 17.485 2.50006" stroke="white" stroke-width="2")
+
+
