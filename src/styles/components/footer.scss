@@ -1,0 +1,285 @@
+@use '../mixins/responsive';
+@use "../vars";
+
+.footer {
+  padding: 80px 0 10px 0;
+  background-image: url("/src/icons/footer-cubes.svg");
+  background-color: #262531;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  @include responsive.media-breakpoint-down(1024) {
+    padding: 60px 0 10px 0;
+  }
+  @include responsive.media-breakpoint-down(680) {
+    padding: 40px 0 10px 0;
+    background-image: none;
+  }
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 121px;
+    @include responsive.media-breakpoint-down(1024) {
+      flex-wrap: wrap;
+    }
+    @include responsive.media-breakpoint-down(680) {
+      margin-bottom: 54px;
+    }
+  }
+
+  &__left {
+    flex-basis: 33.33%;
+    @include responsive.media-breakpoint-down(1024) {
+      flex-basis: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+    @include responsive.media-breakpoint-down(1023) {
+      margin-bottom: 24px;
+      align-items: center;
+    }
+    @include responsive.media-breakpoint-down(680) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 44px;
+    }
+  }
+  &__links {
+    flex-basis: 27%;
+    @include responsive.media-breakpoint-down(1024) {
+      flex-basis: 45%;
+    }
+    @include responsive.media-breakpoint-down(680) {
+      flex-basis: 100% !important;
+      flex-direction: row!important;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+      gap: 0!important;
+      a {
+        font-size: 22px;
+        margin-right: 24px;
+        margin-bottom: 16px;
+        white-space: nowrap;
+      }
+    }
+  }
+  &__contacts {
+    flex-basis: 24%;
+    @include responsive.media-breakpoint-down(1024) {
+      flex-basis: 33%;
+      p {
+        white-space: nowrap;
+      }
+    }
+    @include responsive.media-breakpoint-down(1023) {
+      p {
+        font-size: 14px!important;
+      }
+    }
+  }
+
+  &__logo {
+    margin-bottom: 36px;
+    width: 241px;
+    @include responsive.media-breakpoint-down(1024) {
+      margin-bottom: 0;
+    }
+    img {
+      width: 100%;
+    }
+    @include responsive.media-breakpoint-down(680) {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 12px;
+    @include responsive.media-breakpoint-down(1024) {
+      flex-basis: calc(265px + (311 - 265) * ((100vw - 767px) / (1023 - 767)));
+    }
+    @include responsive.media-breakpoint-down(767) {
+      flex-basis: 265px;
+    }
+    @include responsive.media-breakpoint-down(680) {
+      flex-basis: 100%;
+      margin-bottom: 0;
+    }
+    &-link {
+      height: 44px;
+      width: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      backdrop-filter: blur(12px);
+      transition: .3s;
+      @include responsive.media-breakpoint-down(1023) {
+        height: 36px;
+        width: 36px;
+      }
+      &:hover {
+        background: vars.$blue;
+        border: 1px solid vars.$blue;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__link {
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    color: vars.$white;
+    transition: .1s;
+    @include responsive.media-breakpoint-down(1024) {
+      font-size: 28px;
+    }
+    &:hover {
+      color: vars.$blue;
+    }
+  }
+
+  &__contacts {
+    p {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      color: vars.$white;
+      margin-bottom: 24px;
+      @include responsive.media-breakpoint-down(680) {
+        font-weight: 400;
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  &__tel {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    color: vars.$white;
+    transition: .1s;
+    margin-bottom: 40px;
+    @include responsive.media-breakpoint-down(1300) {
+      font-size: 28px;
+    }
+    @include responsive.media-breakpoint-down(1024) {
+      margin-bottom: 32px;
+    }
+    @include responsive.media-breakpoint-down(1023) {
+      font-size: 24px;
+    }
+    @include responsive.media-breakpoint-down(680) {
+      font-size: 22px;
+      margin-bottom: 24px;
+    }
+    &:hover {
+      color: vars.$blue;
+    }
+  }
+
+
+
+  @include responsive.media-breakpoint-down(1023) {
+    .btn__big-blue {
+      width: 219px;
+    }
+  }
+
+  @include responsive.media-breakpoint-down(680) {
+    .btn__big-blue {
+      width: 257px;
+    }
+  }
+
+  &__bot {
+    & > p, & > a {
+      flex-basis: 33.33%;
+    }
+
+    @include responsive.media-breakpoint-down(1024) {
+      & > p {
+        flex-basis: 49%;
+      }
+
+      & > a {
+        text-align: right!important;
+        flex-basis: 28%;
+      }
+    }
+
+    & > a {
+      text-align: center;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    display: flex;
+    justify-content: space-between;
+    p, a {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+      color: #F6F7F9;
+    }
+    a:hover {
+      color: vars.$white;
+    }
+    @include responsive.media-breakpoint-down(1023) {
+      flex-direction: column;
+      gap: 8px;
+      a {
+        text-align: left!important;
+      }
+    }
+    @include responsive.media-breakpoint-down(680) {
+      p, a, span {
+        font-size: 12px!important;
+      }
+      position: relative;
+      &:before {
+        content:'';
+        position: absolute;
+        top: -10px;
+        left: -20px;
+        width: calc(100% + 40px);
+        height: 1px;
+        background: #31303B;
+      }
+    }
+  }
+
+  &__development {
+    flex-basis: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @include responsive.media-breakpoint-down(1024) {
+      flex-basis: 18%;
+    }
+    @include responsive.media-breakpoint-down(1023) {
+      justify-content: flex-start;
+    }
+    span {
+      color: vars.$white;
+      font-size: 14px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+
+}

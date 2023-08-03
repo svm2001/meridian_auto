@@ -1,0 +1,90 @@
+@use '../mixins/responsive';
+@use "../vars";
+
+.auto-scroll {
+  min-height: 100vh;
+  background: vars.$blue;
+  padding: 150px 0!important;
+  overflow: hidden;
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    h3 {
+      font-size: 80px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%;
+      letter-spacing: -3.2px;
+      margin-bottom: 27px;
+      text-align: center;
+      color: vars.$white;
+    }
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__card {
+    position: relative;
+    padding: 20px;
+    width: 360px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #5D39ED;
+    &:before {
+      position: absolute;
+      height: 100000px;
+      width: .5px;
+      background: rgba(255,255,255,.05);
+      content:'';
+      top: -1000px;
+      left: 0;
+    }
+    &:after {
+      position: absolute;
+      height: 100000px;
+      width: .5px;
+      background: rgba(255,255,255,.05);
+      content:'';
+      top: -4000px;
+      right: 0;
+    }
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+    &:nth-child(2) {
+      margin-top: 33%;
+    }
+    &:nth-child(3) {
+      margin-top: 54%;
+    }
+    &:nth-child(4) {
+      margin-top: 12%;
+    }
+    p:nth-child(1) {
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+      color: vars.$white;
+    }
+    p:nth-child(2) {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      opacity: .8;
+      color: vars.$white;
+    }
+  }
+}

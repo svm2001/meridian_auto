@@ -1,0 +1,40 @@
+@use '../mixins/responsive';
+@use "../vars";
+
+
+.pressCentr {
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    h2 {
+      margin-bottom: 52px;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+  }
+
+  &__content {
+    display: flex;
+    gap: 20px;
+
+    .production__slider-item {
+      flex-basis: 33%;
+      cursor: pointer;
+    }
+
+    .production__slider-item-title {
+      color: vars.$black;
+    }
+  }
+
+  .btn__big-gray {
+    margin: 40px auto 0 auto;
+  }
+
+
+}

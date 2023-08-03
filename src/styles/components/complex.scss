@@ -1,0 +1,61 @@
+@use '../mixins/responsive';
+@use "../vars";
+
+.complex {
+  background: #F3F3F3;
+  position: relative;
+  .complex__shape {
+    position: absolute;
+    bottom: 110px;
+  }
+
+  &__shape-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    counter-reset: number;
+  }
+
+  &__item {
+    padding: 24px;
+    background: vars.$white;
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    min-height: 233px;
+    max-width: 467px;
+    p:nth-child(1) {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+      margin-bottom: 12px;
+    }
+    p:nth-child(2) {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      color: #90949A;
+    }
+    &:before {
+      counter-increment: number;
+      content: counter(number);
+      position: absolute;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+      color: #90949A;
+      top: 24px;
+      left: 24px;
+    }
+  }
+}

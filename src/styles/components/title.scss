@@ -1,0 +1,13 @@
+@use '../mixins/responsive';
+@use "../vars";
+
+.title {
+  &__h2 {
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: -3.2px;
+    margin-bottom: 40px;
+  }
+}

@@ -1,20 +1,36 @@
 mixin footer()
-  footer.footer
+  footer.footer(data-scroll-section data-scroll-id="footer")
     .container
-      .footer__wrapper
+      .footer__main
+        .footer__left
+          a.footer__logo
+            img(src=require("../../icons/logo.svg") alt="logo")
+          .footer__social
+            a.footer__social-link
+              img(src=require("../../icons/social/tg.svg") alt="telegram")
+            a.footer__social-link
+              img(src=require("../../icons/social/youtube.svg") alt="youtube")
+            a.footer__social-link
+              img(src=require("../../icons/social/wa.svg") alt="wa")
         .footer__links
-          a.footer__link.footer__link-tel(href="tel:+79636005665") +7 963 600-56-65
-          a.footer__link.footer__link-email(href="mailto:poletfen1ksa@yandex.ru") poletfen1ksa@yandex.ru
-        .footer__address
-          p Адрес
-          p МО, Дмитровский район, рабочий
+          a.footer__link(href="javascript:void(0);") Продукты
+          a.footer__link(href="javascript:void(0);") Кейсы
+          a.footer__link(href="javascript:void(0);") Услуги
+          a.footer__link(href="javascript:void(0);") О компании
+          a.footer__link(href="javascript:void(0);") Контакты
+        .footer__contacts
+          p Все условия и предложения уточняйте
             br
-            |поселок Некрасовский, Северная 10
+            | у менеджеров по телефону
+          a.footer__tel(href="tel:+78007073187") 7 (800) 707-31-87
+          a.btn__big-blue(href="javascript:void(0);") Узнать больше
       .footer__bot
-        .footer__bot-wrp
-          p © Полет феникса, 2023
-          a(href="") Политика конфиденциальности
-        .footer__dev
-          p
-            span Сайт сделал&nbsp;
-            a(href="https://kompot.bz" target="_blank") «Компот»
+        p Все права защищены. ООО «Автоматизиация Фабрик» © 2023
+        a(href="javascript:void(0);") Политика конфиденциальности данных
+        .footer__development
+          span Сделано в&nbsp;
+          a(href="https://kompot.bz") «Компот»
+
+
+
+

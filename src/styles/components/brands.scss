@@ -1,0 +1,58 @@
+@use '../mixins/responsive';
+@use "../vars";
+
+.brands {
+  background-image: url("/src/icons/brands/bg-l.svg"), url("/src/icons/brands/bg-r.svg");
+  background-position: bottom left, bottom right;
+  background-size: 80px;
+  background-repeat: no-repeat;
+  h2 {
+    margin-bottom: 53px;
+  }
+  &__line-items-wrap {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 20px;
+  }
+
+  &__line-items {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    counter-reset: item;
+    justify-content: space-around;
+    min-width: 100%;
+  }
+
+  &__line-item-content {
+    max-width: 200px;
+    img {
+      max-width: 200px;
+    }
+  }
+
+  &__line-item--separator {
+    width: 16px;
+    height: 16px;
+    background: #F3F3F3;
+  }
+
+  .marquee {
+    animation: scroll 20s linear infinite;
+  }
+  &__line-items-wrap:hover .marquee {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 20px));
+    }
+  }
+}

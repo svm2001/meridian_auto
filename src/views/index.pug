@@ -2,12 +2,555 @@ extends layouts/Main
 
 include components/header
 include components/footer
-include components/scrollTop
 
 block title
   title
 block content
-  +scrollToTop
-  .wrapper
+  .page(data-scroll-container)
     +header
+    .wrapper
+      section.mainScreen(data-scroll-section data-scroll-id="section1")
+        img(src=require("../icons/texture-left.svg")
+          data-aos="fade-up-right"
+          data-aos-offset="50"
+          data-aos-delay="100"
+          data-aos-duration="1500").mainScreen__texture.mainScreen__texture--left
+        img(src=require("../icons/texture-right.svg")
+          data-aos="fade-up-left"
+          data-aos-offset="50"
+          data-aos-delay="100"
+          data-aos-duration="1500").mainScreen__texture.mainScreen__texture--right
+        video(autoplay muted loop id="mainScreenVideo")
+          source(src=require("../images/video2.mp4") type="video/mp4")
+        .container(style="height: 100%;")
+          .mainScreen__wrapper
+            h1
+              span(data-aos="fade-left"
+                data-aos-offset="50"
+                data-aos-delay="100"
+                data-aos-duration="1000") Производитель
+              span(data-aos="fade-right"
+                data-aos-offset="50"
+                data-aos-delay="500"
+                data-aos-duration="1500") оборудования
+              span(data-aos="fade-left"
+                data-aos-offset="50"
+                data-aos-delay="1000"
+                data-aos-duration="1500").h1-box-wrp для&nbsp;
+                span.h1-box автоматизации
+              span(data-aos="fade-right"
+                data-aos-offset="50"
+                data-aos-delay="1500"
+                data-aos-duration="1500") в России
+            .mainScreen__bot
+              a.btn__big-blue(href=""
+                data-aos="fade-up-right"
+                data-aos-offset="50"
+                data-aos-delay="100"
+                data-aos-duration="1500") Узнать
+                br
+                | об оборудовании
+              button.btn__down(data-aos="fade-up-left"
+                data-aos-offset="50"
+                data-aos-delay="100"
+                data-aos-duration="1500")
+                img(src=require("../icons/white-arrow-right.svg")
+                  alt="arrow-icon")
+
+      section.production(data-scroll-section data-scroll-id="section2")
+        .container
+          h2
+            span.with-arrow(
+              data-scroll
+              data-scroll-speed="-3"
+              style="text-align: left;"
+              data-scroll-direction="horizontal") Производим
+            span(
+              data-scroll
+              data-scroll-speed="5"
+              style="text-align: right;"
+              data-scroll-direction="horizontal") оборудование
+            span(
+              data-scroll
+              data-scroll-speed="-4.5"
+              style="text-align: left;"
+              data-scroll-direction="horizontal") в сложных областях
+          .production__slider(
+            data-scroll
+            data-scroll-class="scroll-class"
+            data-scroll-speed="1.5"
+            data-scroll-repeat="true"
+            data-scroll-offset="20%"
+            class="opacity-scroll")
+            .production__slider-item
+              .production__slider-item-title
+                h4 Кондитерские изделия
+              .production__slider-item-bot
+                a.production__slider-item-link
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Frame">
+                  <path id="Vector" d="M16.6635 13.4835L4.51299 13.4836L4.51298 11.487L16.6635 11.487L11.3088 6.13235L12.7206 4.72058L20.4853 12.4853L12.7206 20.25L11.3088 18.8382L16.6635 13.4835Z" fill="black"/>
+                  </g>
+                  </svg>
+                img(src=require("../images/production/prod1.jpg") alt="image")
+            .production__slider-item
+              .production__slider-item-title
+                h4 Соусная продукция
+              .production__slider-item-bot
+                a.production__slider-item-link
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Frame">
+                  <path id="Vector" d="M16.6635 13.4835L4.51299 13.4836L4.51298 11.487L16.6635 11.487L11.3088 6.13235L12.7206 4.72058L20.4853 12.4853L12.7206 20.25L11.3088 18.8382L16.6635 13.4835Z" fill="black"/>
+                  </g>
+                  </svg>
+                img(src=require("../images/production/prod2.jpg") alt="image")
+            .production__slider-item
+              .production__slider-item-title
+                h4 Молочная продукция
+              .production__slider-item-bot
+                a.production__slider-item-link
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Frame">
+                  <path id="Vector" d="M16.6635 13.4835L4.51299 13.4836L4.51298 11.487L16.6635 11.487L11.3088 6.13235L12.7206 4.72058L20.4853 12.4853L12.7206 20.25L11.3088 18.8382L16.6635 13.4835Z" fill="black"/>
+                  </g>
+                  </svg>
+                img(src=require("../images/production/prod3.jpg") alt="image")
+            .production__slider-item
+              .production__slider-item-title
+                h4 Кондитерские изделия
+              .production__slider-item-bot
+                a.production__slider-item-link
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Frame">
+                  <path id="Vector" d="M16.6635 13.4835L4.51299 13.4836L4.51298 11.487L16.6635 11.487L11.3088 6.13235L12.7206 4.72058L20.4853 12.4853L12.7206 20.25L11.3088 18.8382L16.6635 13.4835Z" fill="black"/>
+                  </g>
+                  </svg>
+                img(src=require("../images/production/prod1.jpg") alt="image")
+            .production__slider-item
+              .production__slider-item-title
+                h4 Соусная продукция
+              .production__slider-item-bot
+                a.production__slider-item-link
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Frame">
+                  <path id="Vector" d="M16.6635 13.4835L4.51299 13.4836L4.51298 11.487L16.6635 11.487L11.3088 6.13235L12.7206 4.72058L20.4853 12.4853L12.7206 20.25L11.3088 18.8382L16.6635 13.4835Z" fill="black"/>
+                  </g>
+                  </svg>
+                img(src=require("../images/production/prod2.jpg") alt="image")
+          a.btn__big-gray(href="javascript:void(0);") Смотреть все
+      section.products(data-scroll-section data-scroll-id="section3")
+        .container
+          h2.title__h2 Продукты
+          .products__head
+            .products__filters
+              button.products__filters-item.products__filters-item--no-img
+                span Все производства
+                  sup 7
+              button.products__filters-item.active
+                .products__filters-item-icon-wrp
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Group">
+                  <path id="Vector" d="M22.7507 4.18064L20.8289 2.25973C20.4821 1.9131 19.9186 1.9131 19.5573 2.25973L18.3724 3.45849C18.1412 3.68958 18.0545 4.02176 18.1412 4.32507L16.913 5.55271C16.1327 6.31819 15.1067 6.75148 14.0952 6.75148H14.0519C12.737 6.75148 11.4365 7.30031 10.4539 8.26798L2.41972 16.2982C1.88508 16.8326 1.85618 17.6848 2.36192 18.2047L6.79804 22.6387C7.04369 22.8842 7.37604 22.9998 7.69394 22.9998C8.05519 22.9998 8.41643 22.8553 8.70543 22.5809L16.7396 14.5506C17.6933 13.5974 18.2424 12.3264 18.2568 11.0555C18.2568 10.0011 18.6759 9.00457 19.4128 8.25354L20.7711 6.8959C21.0601 6.93923 21.3635 6.85258 21.5514 6.63593L22.7507 5.43717C23.0831 5.0761 23.0831 4.51282 22.7507 4.16619V4.18064ZM20.9156 5.62493L19.3839 4.09398L20.1931 3.27073L21.7392 4.81612L20.9156 5.62493ZM14.0374 7.92135H14.0952C15.1501 7.92135 16.1905 7.57472 17.0719 6.92479L18.1123 7.96468C17.4476 8.8457 17.1008 9.90003 17.0864 11.041C17.0864 12.0087 16.6529 12.9764 15.9159 13.713L7.88179 21.7432C7.80954 21.8154 7.67949 21.8443 7.62169 21.7865L3.20002 17.367C3.20002 17.367 3.17112 17.1937 3.24337 17.107L11.2775 9.07678C12.0289 8.32575 13.026 7.90691 14.0374 7.90691V7.92135ZM19.8319 6.1882L18.9071 7.11255L17.9534 6.15932L18.8782 5.23497L19.8319 6.1882Z" fill="#262531"/>
+                  </g>
+                  </svg>
+                span Алкогольное
+                  sup 3
+              button.products__filters-item
+                .products__filters-item-icon-wrp
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="pills" clip-path="url(#clip0_648_235)">
+                  <path id="Vector" d="M8.10368 9.30253L2.40907 14.9971C0.588253 16.8179 0.588253 19.77 2.40907 21.5909C4.22989 23.4117 7.18201 23.4117 9.00282 21.5909L14.5476 16.0461C14.6304 15.9634 14.7645 15.9634 14.8472 16.0461C14.93 16.1289 15.0642 16.1289 15.147 16.0461L16.0462 15.147C16.1289 15.0642 16.1289 14.9301 16.0462 14.8473C15.9634 14.7645 15.9634 14.6303 16.0462 14.5476L21.5909 9.00281C23.4117 7.182 23.4117 4.22987 21.5909 2.40907C19.7701 0.588254 16.8179 0.588254 14.9972 2.40907L9.4524 7.95381C9.36964 8.03658 9.23545 8.03657 9.15268 7.95381C9.06992 7.87104 8.93573 7.87104 8.85296 7.95381L8.4034 8.40338C8.07234 8.73444 8.07234 9.27118 8.4034 9.60224L14.098 15.2968" stroke="#262531" stroke-width="1.5"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_648_235">
+                  <rect width="24" height="24" fill="white"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+                span Медицинское
+                  sup 2
+              button.products__filters-item
+                .products__filters-item-icon-wrp
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="package">
+                  <path id="Vector" d="M6.07589 3.74834C5.38393 5.6863 4 10.2733 4 13.1176C4 15.9619 4 19.8632 4 21.4583M6.07589 3.74834V2.49612L16.8571 2.08691V3.43529M6.07589 3.74834C6.65219 5.95933 7.70332 9.58221 8.05552 12.2902C8.13076 12.8688 8.1741 13.4055 8.1741 13.8779C8.1741 15.0375 8.1741 17.8581 8.1741 20.2508C8.1741 21.2906 8.1741 22.2497 8.1741 22.9565M6.07589 3.74834V19.7365M4 21.4583L8.1741 22.9565M4 21.4583L6.07589 19.7365M16.8571 3.43529C17.4122 5.312 18.3987 8.89559 18.8108 11.1722C18.9291 11.8252 19 12.3707 19 12.7375C19 13.8565 19 16.4586 19 18.7079C19 19.7667 19 20.7473 19 21.4583L8.1741 22.9565M16.8571 3.43529L11.9412 4.93276M8.1741 22.9565L6.07589 19.7365" stroke="#262531" stroke-width="1.5"/>
+                  </g>
+                  </svg>
+                span Пищевое
+                  sup 2
+            a.btn__big-white Смотреть все
+          .products__slider
+            .products__items
+              .products__item.products__item--main.products__item--1
+                .products__item-counter
+                  span 1
+                  span
+                  span 3
+                .products__item-render
+                  img(src=require("../images/products/product1.png") alt="image")
+                .products__item-text Автомат этикетировочный
+                  br
+                  | AM Labeling machine
+              .products__item.products__item--2
+                .products__item-counter
+                  span 2
+                  span
+                  span 3
+                .products__item-render
+                  img(src=require("../images/products/product2.png") alt="image")
+                .products__item-text Автомат этикетировочный AM Labeling machine
+              .products__item.products__item--3
+                .products__item-counter
+                  span 3
+                  span
+                  span 3
+                .products__item-render
+                  img(src=require("../images/products/product3.png") alt="image")
+                .products__item-text Автомат этикетировочный AM Labeling machine
+
+
+
+            .products__items
+              .products__item.products__item--main.products__item--1
+                .products__item-counter
+                  span 1
+                  span
+                  span 3
+                .products__item-render
+                  img(src=require("../images/products/product1.png") alt="image")
+                .products__item-text Автомат этикетировочный
+                  br
+                  | AM Labeling machine
+              .products__item.products__item--2
+                .products__item-counter
+                  span 2
+                  span
+                  span 3
+                .products__item-render
+                  img(src=require("../images/products/product2.png") alt="image")
+                .products__item-text Автомат этикетировочный AM Labeling machine
+              .products__item.products__item--3
+                .products__item-counter
+                  span 3
+                  span
+                  span 3
+                .products__item-render
+                  img(src=require("../images/products/product3.png") alt="image")
+                .products__item-text Автомат этикетировочный AM Labeling machine
+
+
+
+      section.auto-scroll(data-scroll-section data-scroll-id="section4")
+        .auto-scroll-inner(data-scroll data-scroll-sticky data-scroll-target=".auto-scroll")
+          h3 Закажите
+            br
+            |автоматизацию
+          <svg width="199" height="119" viewBox="0 0 199 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="4.0">
+          <path d="M71.5493 74.3551H85.0749V92.229H71.5493V117.332H49.3002V92.229H0.880361L0 78.4065L48.9801 1.66822H71.5493V74.3551ZM21.849 74.3551H49.3002V31.3785L47.1393 35.1916L21.849 74.3551Z" fill="white"/>
+          <path d="M87.335 104.542C87.335 100.464 88.6956 97.0218 91.4167 94.2149C94.1378 91.3551 97.926 89.9252 102.781 89.9252C107.583 89.9252 111.345 91.3287 114.066 94.1355C116.84 96.9424 118.228 100.411 118.228 104.542C118.228 108.673 116.814 112.115 113.986 114.869C111.211 117.57 107.477 118.921 102.781 118.921C98.0327 118.921 94.2712 117.544 91.4967 114.79C88.7222 112.036 87.335 108.62 87.335 104.542Z" fill="white"/>
+          <path d="M199 73.3224C199 80.7897 198.12 87.3832 196.359 93.1028C194.652 98.7695 192.171 103.509 188.916 107.322C185.661 111.188 181.686 114.101 176.991 116.061C172.296 118.02 167.014 119 161.144 119C155.329 119 150.073 118.02 145.378 116.061C140.683 114.101 136.708 111.188 133.453 107.322C130.145 103.509 127.584 98.7695 125.77 93.1028C124.009 87.3832 123.129 80.7897 123.129 73.3224V45.6776C123.129 38.2103 124.009 31.6433 125.77 25.9766C127.531 20.257 130.065 15.4642 133.373 11.5981C136.628 7.78505 140.576 4.89875 145.218 2.93925C149.913 0.979752 155.169 0 160.984 0C166.854 0 172.136 0.979752 176.831 2.93925C181.526 4.89875 185.528 7.78505 188.836 11.5981C192.09 15.4642 194.598 20.257 196.359 25.9766C198.12 31.6433 199 38.2103 199 45.6776V73.3224ZM145.538 63.7897L176.591 40.8318C176.484 36.4891 176.004 32.7819 175.15 29.7103C174.35 26.5857 173.149 24.0966 171.549 22.243C170.322 20.7601 168.801 19.6745 166.987 18.986C165.226 18.2445 163.225 17.8738 160.984 17.8738C158.477 17.8738 156.262 18.3505 154.342 19.3037C152.474 20.2041 150.9 21.581 149.62 23.4346C148.233 25.3941 147.192 27.9361 146.498 31.0607C145.858 34.1854 145.538 37.8925 145.538 42.1822V54.972C145.538 57.514 145.538 59.2087 145.538 60.0561C145.538 60.9034 145.538 62.148 145.538 63.7897ZM176.591 76.6589V63.2336C176.591 61.486 176.591 60.2149 176.591 59.4206C176.591 58.5732 176.591 57.3816 176.591 55.8458L145.538 78.7243C145.645 82.2196 145.992 85.3178 146.579 88.0187C147.219 90.7196 148.099 92.9704 149.22 94.771C150.5 96.9424 152.127 98.5576 154.102 99.6168C156.076 100.676 158.423 101.206 161.144 101.206C163.652 101.206 165.866 100.755 167.787 99.8551C169.708 98.9019 171.309 97.4719 172.589 95.5654C173.923 93.5529 174.91 90.9844 175.55 87.8598C176.244 84.6822 176.591 80.9486 176.591 76.6589Z" fill="white"/>
+          </g>
+          </svg>
+
+        .container
+          .auto-scroll__container
+            .auto-scroll__card(
+              data-scroll
+            data-scroll-speed="1")
+              p До -50%
+              p Снизятся затраты на ФОТ сотрудников
+            .auto-scroll__card(
+              data-scroll
+              data-scroll-speed="9")
+              p До +100%
+              p Увеличится количество выпускаемой продукции в ед. времени, сократиться себестоимость выпуска
+            .auto-scroll__card(
+              data-scroll
+              data-scroll-speed="6")
+              p До -100%
+              p Снизится уровень брака и рекламаций
+            .auto-scroll__card(
+              data-scroll
+              data-scroll-speed="2")
+              p До +100%
+              p Получите выгодное обслуживание по сравнению с Европейскими аналогами
+          .auto-scroll__container
+            .auto-scroll__card(
+              data-scroll
+              data-scroll-speed="8")
+              p До -50%
+              p Снизятся затраты на ФОТ сотрудников
+            .auto-scroll__card(
+              data-scroll
+              data-scroll-speed="1")
+              p До +100%
+              p Увеличится количество выпускаемой продукции в ед. времени, сократиться себестоимость выпуска
+            .auto-scroll__card(
+              data-scroll
+              data-scroll-speed="9")
+              p До -100%
+              p Снизится уровень брака и рекламаций
+            .auto-scroll__card(
+              data-scroll
+              data-scroll-speed="1")
+              p До +100%
+              p Получите выгодное обслуживание по сравнению с Европейскими аналогами
+      //
+      section.cases(data-scroll-section data-scroll-id="section5")
+        .container
+          .cases__container
+            h2.title__h2 Наши кейсы
+            .cases__slider
+              .cases__slider-item
+                img.cases__bg(src=require("../images/cases/bg.png") alt="background")
+                .cases__slider-item-wrp
+                  .cases__top
+                    .cases__brand
+                      img.cases__brand-logo(src=require("../icons/brands/unilever.png") alt="unilever")
+                      .cases__brand-name Unilever
+                    .cases__year 2021 г
+                  .cases__bot
+                    .cases__name Автоматизированная система маркировки и отбраковки продукции
+                    a.btn__play-video
+                      img(src=require("../icons/play.svg") alt="play")
+              .cases__slider-item
+                img.cases__bg(src=require("../images/cases/bg.png") alt="background")
+                .cases__slider-item-wrp
+                  .cases__top
+                    .cases__brand
+                      img.cases__brand-logo(src=require("../icons/brands/unilever.png") alt="unilever")
+                      .cases__brand-name Unilever
+                    .cases__year 2021 г
+                  .cases__bot
+                    .cases__name Автоматизированная система маркировки и отбраковки продукции
+                    a.btn__play-video
+                      img(src=require("../icons/play.svg") alt="play")
+              .cases__slider-item
+                img.cases__bg(src=require("../images/cases/bg.png") alt="background")
+                .cases__slider-item-wrp
+                  .cases__top
+                    .cases__brand
+                      img.cases__brand-logo(src=require("../icons/brands/unilever.png") alt="unilever")
+                      .cases__brand-name Unilever
+                    .cases__year 2021 г
+                  .cases__bot
+                    .cases__name Автоматизированная система маркировки и отбраковки продукции
+                    a.btn__play-video
+                      img(src=require("../icons/play.svg") alt="play")
+              .cases__slider-item
+                img.cases__bg(src=require("../images/cases/bg.png") alt="background")
+                .cases__slider-item-wrp
+                  .cases__top
+                    .cases__brand
+                      img.cases__brand-logo(src=require("../icons/brands/unilever.png") alt="unilever")
+                      .cases__brand-name Unilever
+                    .cases__year 2021 г
+                  .cases__bot
+                    .cases__name Автоматизированная система маркировки и отбраковки продукции
+                    a.btn__play-video
+                      img(src=require("../icons/play.svg") alt="play")
+            a.btn__big-gray Cмотреть все
+      section.brands(data-scroll-section data-scroll-id="section6")
+        .container
+          h2.title__h2 Работаем с крупными фабриками и лидерами рынка
+        .brands__line
+          .brands__line-items-wrap
+            .brands__line-items.marquee
+              a.brands__line-item.brands__line-item-content
+                img(src=require("../icons/brands/brand1.png") alt="brand")
+              .brands__line-item.brands__line-item--separator
+              a.brands__line-item.brands__line-item-content
+                img(src=require("../icons/brands/brand2.png") alt="brand")
+              .brands__line-item.brands__line-item--separator
+              a.brands__line-item.brands__line-item-content
+                img(src=require("../icons/brands/brand3.png") alt="brand")
+              .brands__line-item.brands__line-item--separator
+              a.brands__line-item.brands__line-item-content
+                img(src=require("../icons/brands/brand4.png") alt="brand")
+              .brands__line-item.brands__line-item--separator
+              a.brands__line-item.brands__line-item-content
+                img(src=require("../icons/brands/brand5.png") alt="brand")
+              .brands__line-item.brands__line-item--separator
+              a.brands__line-item.brands__line-item-content
+                img(src=require("../icons/brands/brand6.png") alt="brand")
+              .brands__line-item.brands__line-item--separator
+              a.brands__line-item.brands__line-item-content
+                img(src=require("../icons/brands/brand7.png") alt="brand")
+              .brands__line-item.brands__line-item--separator
+            .brands__line-items.marquee(aria-hidden="true")
+              a.brands__line-item.brands__line-item-content
+                img(src=require("../icons/brands/brand1.png") alt="brand")
+              .brands__line-item.brands__line-item--separator
+              a.brands__line-item.brands__line-item-content
+                img(src=require("../icons/brands/brand2.png") alt="brand")
+              .brands__line-item.brands__line-item--separator
+              a.brands__line-item.brands__line-item-content
+                img(src=require("../icons/brands/brand3.png") alt="brand")
+              .brands__line-item.brands__line-item--separator
+              a.brands__line-item.brands__line-item-content
+                img(src=require("../icons/brands/brand4.png") alt="brand")
+              .brands__line-item.brands__line-item--separator
+              a.brands__line-item.brands__line-item-content
+                img(src=require("../icons/brands/brand5.png") alt="brand")
+              .brands__line-item.brands__line-item--separator
+              a.brands__line-item.brands__line-item-content
+                img(src=require("../icons/brands/brand6.png") alt="brand")
+              .brands__line-item.brands__line-item--separator
+              a.brands__line-item.brands__line-item-content
+                img(src=require("../icons/brands/brand7.png") alt="brand")
+              .brands__line-item.brands__line-item--separator
+
+      section.complex(data-scroll-section data-scroll-id="section7")
+        .complex__shape
+          <svg width="800" height="746" viewBox="0 0 800 746" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line y1="-0.75" x2="242.325" y2="-0.75" transform="matrix(0.484485 0.874799 -0.874987 0.484146 190.942 115.754)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="307.234" y2="-0.75" transform="matrix(-0.0431893 0.999067 -0.999069 -0.0431499 335.904 20.5543)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="363.488" y2="-0.75" transform="matrix(-0.50469 0.863301 -0.863502 -0.504346 514.403 20.5543)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="312.643" y2="-0.75" transform="matrix(-0.751224 0.660048 -0.660388 -0.750924 578.229 121.162)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="421.905" y2="-0.75" transform="matrix(-0.86192 0.507044 -0.507388 -0.861717 706.964 121.162)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="306.152" y2="-0.75" transform="matrix(-0.951166 0.308679 -0.308934 -0.951083 631.238 245.571)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="446.787" y2="-0.75" transform="matrix(-0.999557 -0.0297604 0.0297876 -0.999556 787.018 366.733)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="381.878" y2="-0.75" transform="matrix(-0.970169 -0.242431 0.24264 -0.970116 706.964 446.787)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="537.659" y2="-0.75" transform="matrix(-0.847514 -0.530773 0.531121 -0.847296 792.427 644.758)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="217.443" y2="-0.75" transform="matrix(-0.732949 -0.680284 0.680618 -0.732638 487.357 503.041)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="256.389" y2="-0.75" transform="matrix(-0.450327 -0.892864 0.893029 -0.449999 444.085 584.177)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="385.124" y2="-0.75" transform="matrix(-0.0883635 -0.996088 0.996095 -0.0882834 362.949 739.957)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="510.614" y2="-0.75" transform="matrix(0.755471 0.655182 -0.655524 0.755174 -68.6921 9.73621)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="446.787" y2="-0.75" transform="matrix(0.859086 0.511832 -0.512177 0.85888 -73.0193 115.754)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="281.27" y2="-0.75" transform="matrix(0.923338 0.383987 -0.384286 0.923214 57.8794 240.161)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="518.186" y2="-0.75" transform="matrix(0.993157 0.116789 -0.116894 0.993144 -197.427 287.761)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="397.024" y2="-0.75" transform="matrix(0.953838 -0.300322 0.300572 0.953759 -63.2832 472.75)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="446.787" y2="-0.75" transform="matrix(0.863879 -0.503699 0.504043 0.863679 -70.8557 584.177)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <line y1="-0.75" x2="333.197" y2="-0.75" transform="matrix(0.487737 -0.872991 0.87318 0.487397 156.324 651.249)" stroke="#E3E3E3" stroke-width="1.5"/>
+          <rect x="301.205" y="322.297" width="48.845" height="48.845" fill="#4B23EB" stroke="#F3F3F3" stroke-width="2"/>
+          <rect x="188.447" y="107.849" width="11.4817" height="11.4817" fill="#4B23EB" stroke="#F3F3F3" stroke-width="1.5"/>
+          <rect x="331.245" y="13.7317" width="11.4817" height="11.4817" fill="#A6A6A6" stroke="#F3F3F3" stroke-width="1.5"/>
+          <rect x="48.8931" y="231.175" width="11.4817" height="11.4817" fill="#A6A6A6" stroke="#F3F3F3" stroke-width="1.5"/>
+          <rect x="152.747" y="643.344" width="11.4817" height="11.4817" fill="#4B23EB" stroke="#F3F3F3" stroke-width="1.5"/>
+          <rect x="439.426" y="577.354" width="11.4817" height="11.4817" fill="#A6A6A6" stroke="#F3F3F3" stroke-width="1.5"/>
+          <rect x="356.127" y="733.134" width="11.4817" height="11.4817" fill="#4B23EB" stroke="#F3F3F3" stroke-width="1.5"/>
+          <rect x="480.535" y="496.218" width="11.4817" height="11.4817" fill="#A6A6A6" stroke="#F3F3F3" stroke-width="1.5"/>
+          <rect x="787.768" y="637.935" width="11.4817" height="11.4817" fill="#4B23EB" stroke="#F3F3F3" stroke-width="1.5"/>
+          <rect x="702.305" y="439.964" width="11.4817" height="11.4817" fill="#4B23EB" stroke="#F3F3F3" stroke-width="1.5"/>
+          <rect x="782.359" y="359.91" width="11.4817" height="11.4817" fill="#4B23EB" stroke="#F3F3F3" stroke-width="1.5"/>
+          <rect x="625.497" y="241.993" width="11.4817" height="11.4817" fill="#A6A6A6" stroke="#F3F3F3" stroke-width="1.5"/>
+          <rect x="702.305" y="114.34" width="11.4817" height="11.4817" fill="#A6A6A6" stroke="#F3F3F3" stroke-width="1.5"/>
+          <rect x="573.57" y="114.34" width="11.4817" height="11.4817" fill="#4B23EB" stroke="#F3F3F3" stroke-width="1.5"/>
+          <rect x="506.498" y="13.7317" width="11.4817" height="11.4817" fill="#A6A6A6" stroke="#F3F3F3" stroke-width="1.5"/>
+          </svg>
+        .container
+          .complex__shape-container
+            h2.title__h2(data-scroll data-scroll-sticky data-scroll-target=".complex") Комплексный
+              br
+              | подход к работе
+            .complex__list(data-scroll data-scroll-sticky data-scroll-target=".complex")
+              .complex__item.complex__item--1
+                p Анализ ваших потребностей
+                p Обсуждение требований и консультации
+              .complex__item.complex__item--2
+                p Проектирование и разработка
+                p После обсуждения требований мы приступаем к разработке и созданию индивидуального проекта
+              .complex__item.complex__item--3
+                p Производство и испытание
+                p После производства каждый продукт проходит тщательное испытание, чтобы убедиться в его надёжности и функциональности
+              .complex__item.complex__item--4
+                p Техническая поддержка и обслуживание
+                p Оказываем техническую поддержку и обслуживание вашего оборудования в случае необходимости
+              .complex__item.complex__item--5
+                p Техническая поддержка и обслуживание
+                p Оказываем техническую поддержку и обслуживание вашего оборудова
+
+      section.meridianInfo(data-scroll-section data-scroll-id="section8")
+        .container
+          h2.h2__title
+            span «Меридиан автоматизация»
+            span производит автоматизированное
+            span оборудование для:
+            .meridianInfo__video
+              .meridianInfo__video-content
+                .meridianInfo__video-text О компании
+                .meridianInfo__video-length 02:24
+              a.btn__play-video
+                img(src=require("../icons/play.svg") alt="play")
+        .meridianInfo__item
+          .container
+            .meridianInfo__item-title Промышленности
+            .meridianInfo__item-text Мы адаптировали наше оборудование под российские условия производства и российское законодательство. Оборудование проходит тестирование на реальном производстве
+        .meridianInfo__item.meridianInfo__item--with-buttons
+          .container
+            .meridianInfo__item-title Производства
+            .meridianInfo__item-content
+              .meridianInfo__item-text Все оборудование уникально и не имеет аналогов в России. Мы знаем особенности и потребности производителей укупорочных изделий:
+              .meridianInfo__item-buttons
+                .btn__meridianInfo Ликероводочной
+                .btn__meridianInfo Фармацевтической
+                .btn__meridianInfo Молочной
+      section.residents(data-scroll-section data-scroll-id="section9")
+        .container
+          h2.title__h2 Являемся резидентами
+          .residents__list
+            .residents__list-item
+              img(src=require("../images/residents/resident1.png") alt="resident")
+              p.residents__list-item-text Сколково
+            .residents__list-item
+              img(src=require("../images/residents/resident2.png") alt="resident")
+              p.residents__list-item-text Московска Торгово-промышленная палата
+            .residents__list-item
+              img(src=require("../images/residents/resident3.png") alt="resident")
+              p.residents__list-item-text НАУРР
+            .residents__list-item
+              img(src=require("../images/residents/resident4.png") alt="resident")
+              p.residents__list-item-text Пермская Торгово-промышленная палата
+      section.pressCentr(data-scroll-section data-scroll-id="section10")
+        .container
+          .pressCentr__head
+            h2.title__h2 Пресс-центр
+            .pressCentr__tabs
+              button.btn__default.pressCentr__tabs-item.active Все
+              button.btn__default.pressCentr__tabs-item Новости
+              button.btn__default.pressCentr__tabs-item СМИ о нас
+              button.btn__default.pressCentr__tabs-item Статьи
+          .pressCentr__content
+            a(href="javascript:void(0);").production__slider-item
+              .production__slider-item-title
+                h4 «Меридиан Автоматизация» расскажет о современных технологиях маркировки безалкогольных напитков
+              .production__slider-item-bot
+                .production__slider-item-link
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Frame">
+                  <path id="Vector" d="M16.6635 13.4835L4.51299 13.4836L4.51298 11.487L16.6635 11.487L11.3088 6.13235L12.7206 4.72058L20.4853 12.4853L12.7206 20.25L11.3088 18.8382L16.6635 13.4835Z" fill="black"/>
+                  </g>
+                  </svg>
+                img(src=require("../images/presscentre/presscentre1.jpg") alt="image")
+            a(href="javascript:void(0);").production__slider-item
+              .production__slider-item-title
+                h4 «Меридиан» поделится опытом на мероприятии по оборудованию для маркировки и IT
+              .production__slider-item-bot
+                .production__slider-item-link
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Frame">
+                  <path id="Vector" d="M16.6635 13.4835L4.51299 13.4836L4.51298 11.487L16.6635 11.487L11.3088 6.13235L12.7206 4.72058L20.4853 12.4853L12.7206 20.25L11.3088 18.8382L16.6635 13.4835Z" fill="black"/>
+                  </g>
+                  </svg>
+                img(src=require("../images/presscentre/presscentre2.jpg") alt="image")
+            a(href="javascript:void(0);").production__slider-item
+              .production__slider-item-title
+                h4 Автоматизация и роботизация промышленных предприятий
+              .production__slider-item-bot
+                .production__slider-item-link
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Frame">
+                  <path id="Vector" d="M16.6635 13.4835L4.51299 13.4836L4.51298 11.487L16.6635 11.487L11.3088 6.13235L12.7206 4.72058L20.4853 12.4853L12.7206 20.25L11.3088 18.8382L16.6635 13.4835Z" fill="black"/>
+                  </g>
+                  </svg>
+                img(src=require("../images/presscentre/presscentre3.jpg") alt="image")
+          a.btn__big-gray(href="javascript:void(0);") Смотреть все
+      section.map(data-scroll-section data-scroll-id="section11")
+        #cityShop
+          h4 Наши адреса
+          #cities
+          #shops
+        #map(style="width: 100%; height: 630px")
+
     +footer

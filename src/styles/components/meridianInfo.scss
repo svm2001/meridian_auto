@@ -1,0 +1,113 @@
+@use '../mixins/responsive';
+@use "../vars";
+
+.meridianInfo {
+  background: vars.$black;
+
+  h2 {
+    display: flex;
+    flex-direction: column;
+    color: vars.$white;
+    margin-bottom: 70px;
+    position: relative;
+    width: max-content;
+    span {
+      font-size: 80px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%;
+      letter-spacing: -3.2px;
+    }
+  }
+
+  &__video {
+    width: 152px;
+    padding-left: 12px;
+    background: #3C3B46;
+    position: absolute;
+    top: 23px;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    &-text, &-length {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%;
+    }
+
+    &-length {
+      opacity: .5;
+    }
+  }
+
+  &__item {
+    height: 220px;
+    align-items: center;
+    transition: .5s;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    user-select: none;
+    .container {
+      display: flex;
+      height: 100%;
+      align-items: center;
+    }
+    &-title {
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 130%;
+      min-width: 542px;
+      color: vars.$white;
+    }
+    &-text {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      color: vars.$white;
+    }
+
+    &--with-buttons {
+      .meridianInfo__item-text {
+        margin-bottom: 16px;
+      }
+      .meridianInfo__item-buttons {
+        display: flex;
+        gap:8px;
+      }
+      .btn__meridianInfo {
+        color: vars.$white;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        padding: 8px 12px;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+      }
+    }
+
+    &:nth-child(2) {
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+      &:hover {
+        background-image: url("/src/images/meridianInfo/bg-122.png");
+      }
+    }
+    &:nth-child(3) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+      &:hover {
+        background-image: url("/src/images/meridianInfo/bg-12.png");
+      }
+    }
+  }
+}

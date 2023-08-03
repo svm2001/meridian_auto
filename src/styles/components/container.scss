@@ -5,13 +5,16 @@
   position: relative;
   width: 100%;
   margin: 0 auto;
-  max-width: 1320px;
-  @include responsive.media-breakpoint-down(1400) {
+  max-width: 1440px;
+  @include responsive.media-breakpoint-down(1600) {
+    max-width: 1280px;
+  }
+  @include responsive.media-breakpoint-down(1300) {
     max-width: 1000px;
   }
   @include responsive.media-breakpoint-down(1024) {
     max-width: 100%;
-    padding: 0 32px;
+    padding: 0 40px;
   }
   @include responsive.media-breakpoint-down(680) {
     padding: 0 20px;

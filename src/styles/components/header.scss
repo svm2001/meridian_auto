@@ -1,0 +1,223 @@
+@use '../mixins/responsive';
+@use "../vars";
+
+
+.header {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-height: 104px;
+  min-height: 104px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+  display: flex;
+  align-items: center;
+  transition: .3s;
+  top: -104px;
+  &.visible {
+    top: 0;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    max-height: 35px;
+  }
+  &__btns {
+    display: flex;
+  }
+
+  &__btn {
+    position: relative;
+    padding: 12px 24px;
+    background-color: rgba(255,255,255,.1);
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    color: vars.$white;
+    font-size: 16px;
+    font-weight: 500;
+    min-height: 56px;
+    &.js-btn-visible.visible {
+      z-index: 2;
+    }
+    &:not(:nth-last-child(1)) {
+      margin-left: 8px;
+    }
+    &.blue {
+      background: vars.$blue;
+      color: vars.$white;
+      margin-left: 64px;
+      margin-right: 3px;
+      &.visible {
+        background-color: rgba(255,255,255,.1);
+      }
+      &:hover {
+        background: vars.$white;
+        color: vars.$blue;
+      }
+    }
+    &.burger {
+      background: vars.$white;
+      color: vars.$blue;
+      &.visible {
+        .burger__btn span:nth-child(1) {
+          transform: rotate(45deg) translate(2px, 4px);
+          border-radius: 20px;
+          height: 2px;
+        }
+        .burger__btn span:nth-child(2) {
+          transform: rotate(135deg) translate(-1px, 3px);
+          border-radius: 20px;
+          height: 2px;
+        }
+        .svg-hide {
+          display: none;
+        }
+      }
+      .burger__btn {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 8px;
+        span {
+          width: 18px;
+          height: 3px;
+          transition: .3s;
+          background: vars.$blue;
+        }
+      }
+    }
+    svg {
+      margin-right: 8px;
+      path {
+        transition: .3s;
+      }
+    }
+    &:hover {
+      color: vars.$blue;
+      background: vars.$white;
+      svg path {
+        fill: vars.$blue;
+        //stroke: vars.$blue;
+      }
+    }
+
+  }
+  &__address, &__burger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: .3s;
+    display: flex;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    h3 {
+      font-size: 24px;
+      opacity: .5;
+      color: vars.$white;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+    &-link {
+      font-size: 24px;
+      color: vars.$white;
+      padding-bottom: 24px;
+      line-height: 31px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+      position: relative;
+      &:hover:before {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 5px;
+        width: 24px;
+        height: 24px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-image: url("/src/icons/white-arrow-right.svg");
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: .3s;
+      }
+      &:not(:nth-last-child(1)) {
+        margin-bottom: 24px;
+      }
+    }
+    &-close {
+      width: 50%;
+      flex-basis: 50%;
+      background: rgba(0,0,0,.65);
+    }
+    &-content {
+      width: 50%;
+      flex-basis: 50%;
+      background: vars.$blue;
+      position: relative;
+      padding: 170px 76px 140px 90px;
+      &:before {
+        position: absolute;
+        top: 103px;
+        height: 1px;
+        background: rgba(255,255,255,.1);
+        left: 0;
+        content:'';
+        width: 100%;
+      }
+    }
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__burger-accordion-item {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 42px;
+    color: vars.$white;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    &:not(:first-child) {
+      margin-top: 16px;
+    }
+    &.no-accord {
+      padding-bottom: 16px;
+    }
+  }
+}
+
+.header__burger-accordion-item:hover .header__burger-accordion-content {
+  height: 180px;
+  max-height: 10000px;
+  overflow-y: auto;
+}
+
+.header__burger-accordion-content, .header__burger-accordion-content {
+  height: 0;
+  overflow: hidden;
+  transition: height .2s;
+}
+
+.header__burger-accordion-content {
+  margin-top: 16px;
+  a {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    margin-bottom: 16px;
+  }
+}

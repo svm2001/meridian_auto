@@ -1,0 +1,157 @@
+@use '../mixins/responsive';
+@use "../vars";
+
+.map {
+  position: relative;
+  padding-bottom: 0;
+  #cityShop {
+    position: absolute;
+    padding: 24px;
+    background: vars.$white;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 80px;
+    z-index: 2;
+    //box-shadow: 0 0 13px 6px #cdcdcd;
+    border-radius: 12px;
+    li {
+      list-style: none;
+    }
+    h4 {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+      margin-bottom: 15px;
+    }
+  }
+
+  #cities {
+    display: flex;
+    align-items: center;
+    gap:12px;
+    margin-bottom: 85px;
+    .city__tab {
+      height: 52px;
+      display: flex;
+      align-items: center;
+      padding-left: 68px;
+      padding-right: 22px;
+      background: vars.$white;
+      border: 2px solid #F3F3F3;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      position: relative;
+      transition: .3s;
+      &:hover {
+        border: 2px solid #EAE4FF;
+        background: #EAE4FF;
+        color: vars.$blue;
+      }
+      &.active {
+        background: vars.$blue;
+        color: vars.$white;
+        border: 2px solid vars.$blue;
+        &:after {
+          content: '';
+          position: absolute;
+          top: -2px;
+          left: -2px;
+          height: 52px;
+          width: 52px;
+          background: #6F4FEF;
+        }
+        &:nth-child(1):before {
+          background-image: url("/src/icons/map/pen-white.svg");
+        }
+        &:nth-child(2):before {
+          background-image: url("/src/icons/map/tool-white.svg");
+        }
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        height: 52px;
+        width: 52px;
+        background: #F9F9FB;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 12px;
+        z-index: 3;
+      }
+      &:nth-child(1):before {
+        background-image: url("/src/icons/map/pen-black.svg");
+      }
+      &:nth-child(2):before {
+        background-image: url("/src/icons/map/tool-black.svg");
+      }
+    }
+  }
+
+  #shops {
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    & > li li, & a {
+      position: relative;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      color: vars.$black;
+      transition: .1s;
+      padding-left: 30px;
+      cursor: pointer;
+      &:hover {
+        color: vars.$blue;
+      }
+    }
+
+    & a:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-position: center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+
+    & a:nth-child(2):before {
+      background-image: url("/src/icons/map/map-tel.svg");
+    }
+
+    & a:nth-child(3):before {
+      background-image: url("/src/icons/map/map-mail.svg");
+    }
+
+    & > li li {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-image: url("/src/icons/map/map-pin.svg");
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

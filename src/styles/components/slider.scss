@@ -1,0 +1,60 @@
+@use '../mixins/responsive';
+@use "../vars";
+
+.slick-arrow {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  bottom: -92px;
+  background-color: vars.$white;
+  background-image: url("/src/icons/arrow-black-left.svg");
+  background-size: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 0;
+  border: 1px solid #E9E9EA;
+  left:50%;
+  &:hover {
+    background-image: url("/src/icons/arrow-blue-left.svg");
+  }
+}
+
+.slick-next.slick-arrow {
+  transform: translateX(0px) rotate(180deg);
+  &:hover {
+    transform: translateX(0px);
+  }
+}
+
+.slick-prev.slick-arrow {
+  transform: translateX(-52px);
+  &:hover {
+    transform: translateX(-52px) rotate(180deg);
+  }
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -54px;
+  display: flex;
+  gap: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  li {
+    list-style: none;
+    transition: .5s;
+    button {
+      height: 8px;
+      background-color: #F3F3F3;
+      width: 49px;
+      border: none;
+      font-size: 0;
+      transition: .5s;
+    }
+    &.slick-active button {
+      width: 8px;
+      background: vars.$blue;
+    }
+  }
+
+}

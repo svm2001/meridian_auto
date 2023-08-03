@@ -1,0 +1,203 @@
+@use '../mixins/responsive';
+@use "../vars";
+
+.btn {
+  &__big-blue {
+    width: 257px;
+    height: 80px;
+    padding: 16px;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: vars.$blue;
+    transition: .3s;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    color: vars.$white;
+    position: relative;
+    &:before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("/src/icons/white-arrow-right.svg");
+      transform: rotate(-45deg);
+      transition: .3s;
+    }
+    &:hover {
+      background: #3613C1;
+    }
+    &:hover:before {
+      transform: rotate(0deg);
+    }
+    &:active:before {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__down {
+    height: 80px;
+    width: 80px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.20);
+    &:hover img {
+      bottom: 10px;
+    }
+    img {
+      position: absolute;
+      bottom: 15px;
+      right: 10px;
+      transform: rotate(90deg);
+      transition: .3s;
+    }
+  }
+
+  &__big-gray {
+    width: 197px;
+    height: 80px;
+    padding: 16px;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #F3F3F3;
+    transition: .3s;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    color: vars.$blue;
+    position: relative;
+    &:before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("/src/icons/blue-arrow-right.svg");
+      transform: rotate(-45deg);
+      transition: .3s;
+    }
+    &:hover {
+      background: #EAE4FF;
+    }
+    &:hover:before {
+      transform: rotate(0deg);
+    }
+    &:active:before {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__big-white {
+    width: 197px;
+    height: 80px;
+    padding: 16px;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: vars.$white;
+    transition: .3s;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    color: vars.$blue;
+    position: relative;
+    &:before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("/src/icons/blue-arrow-right.svg");
+      transform: rotate(-45deg);
+      transition: .3s;
+    }
+    &:hover {
+      background: #EAE4FF;
+    }
+    &:hover:before {
+      transform: rotate(0deg);
+    }
+    &:active:before {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__play-video {
+    width: 44px;
+    height: 44px;
+    transition: .5s;
+    position: relative;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+    }
+    &:before {
+      content:"";
+      z-index: 1;
+      position: absolute;
+      background: vars.$blue;
+      width: 100%;
+      height: 100%;
+    }
+    &:after {
+      content:"";
+      z-index: 2;
+      position: absolute;
+      background: #3613C1;
+      width: 100%;
+      height: 0;
+      transition: .5s;
+    }
+    &:hover:after {
+      height: 100%;
+    }
+  }
+
+  &__default {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    transition: .3s;
+    border: 2px solid #F3F3F3;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 22px;
+    background: vars.$white;
+    &:hover {
+      background: #EAE4FF;
+      color: vars.$blue;
+      border: 2px solid #EAE4FF;
+    }
+    &:active {
+      background: vars.$white;
+      color: vars.$black;
+      border: 2px solid #F3F3F3;
+    }
+    &.active {
+      color: vars.$white;
+      background: vars.$blue;
+      border: 2px solid vars.$blue;
+
+    }
+  }
+}

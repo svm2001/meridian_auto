@@ -1,0 +1,98 @@
+@use '../mixins/responsive';
+@use "../vars";
+
+.cases {
+  &__container {
+    position: relative;
+
+    h2 {
+      margin-bottom: 50px;
+    }
+
+    .btn__big-gray {
+      max-width: 197px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &__slider-item {
+    max-height: 570px;
+    min-height: 570px!important;
+    height: 100%;
+    position: relative;
+  }
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: -1;
+  }
+
+  &__slider-item-wrp {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 570px;
+    justify-content: space-between;
+  }
+
+  &__brand {
+    display: flex;
+    background: white;
+    align-items: center;
+    padding: 8px 12px;
+    width: fit-content;
+    margin-bottom: 8px;
+    &-name {
+      color: vars.$black;
+      font-size: 14px;
+    }
+    &-logo {
+      margin-right: 4px;
+    }
+  }
+
+  &__year {
+    background: white;
+    padding: 8px 12px;
+    width: fit-content;
+    font-size: 14px;
+  }
+
+  &__bot {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__name {
+    flex-basis: 55%;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    color: vars.$white;
+    letter-spacing: -.8px;
+  }
+
+  .slick-arrow {
+    bottom: -76px;
+  }
+
+  .slick-prev.slick-arrow {
+    left: 0;
+    transform: translateX(0px);
+    &:hover {
+      transform: translateX(0px) rotate(180deg);
+    }
+  }
+  .slick-next.slick-arrow {
+    right: 0;
+    left: auto;
+  }
+
+}
