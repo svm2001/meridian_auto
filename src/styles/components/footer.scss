@@ -96,6 +96,7 @@
   &__social {
     display: flex;
     gap: 12px;
+    margin-bottom: 40px;
     @include responsive.media-breakpoint-down(1024) {
       flex-basis: calc(265px + (311 - 265) * ((100vw - 767px) / (1023 - 767)));
     }
@@ -115,6 +116,7 @@
       border: 1px solid rgba(255, 255, 255, 0.20);
       backdrop-filter: blur(12px);
       transition: .3s;
+      border-radius: 12px;
       @include responsive.media-breakpoint-down(1023) {
         height: 36px;
         width: 36px;
@@ -162,6 +164,26 @@
     }
   }
 
+  &__address {
+    margin-bottom: 40px;
+    max-width: 300px;
+    &-title {
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      margin-bottom: 16px;
+    }
+    &-text {
+      color: white;
+      font-size: 14px;
+      line-height: 20px;
+      &:not(:nth-last-of-type(1)) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
   &__tel {
     font-size: 32px;
     font-style: normal;
@@ -169,7 +191,9 @@
     line-height: 130%;
     color: vars.$white;
     transition: .1s;
-    margin-bottom: 40px;
+    &:nth-of-type(2) {
+      margin-bottom: 40px;
+    }
     @include responsive.media-breakpoint-down(1300) {
       font-size: 28px;
     }
@@ -226,12 +250,16 @@
     }
     display: flex;
     justify-content: space-between;
+    a {
+      text-align: right;
+    }
     p, a {
       font-size: 14px;
       font-style: normal;
       font-weight: 400;
       line-height: 20px;
       color: #F6F7F9;
+      white-space: nowrap;
     }
     a:hover {
       color: vars.$white;

@@ -41,3 +41,13 @@ html.has-scroll-dragging {
 .has-scroll-dragging .c-scrollbar_thumb {
   cursor: -webkit-grabbing;
   cursor: grabbing; }
+
+
+.fade-in-element {
+  opacity: .1;
+  transition: 1s linear;
+}
+.fade-in {
+  opacity: 1;
+  transition: 1s linear;
+}

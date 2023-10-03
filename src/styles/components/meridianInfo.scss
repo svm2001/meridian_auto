@@ -20,6 +20,65 @@
     }
   }
 
+  &__container {
+    display: flex;
+    gap: 20px;
+    min-height: 443px;
+    img {
+      border-radius: 16px;
+      overflow: hidden;
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: 20px;
+    flex-basis: 50%;
+    &-title {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 130%;
+      letter-spacing: -0.64px;
+      color: white;
+    }
+
+    &-text {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      color: white;
+    }
+    &-sector {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 12px;
+      padding: 24px;
+      flex-basis: 50%;
+      border-radius: 16px;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: auto;
+      background-position: center;
+      background-color: #9f9a9f;
+      img {
+        max-width: 64px;
+      }
+
+      &--1 {
+        background-image: url("../images/meridianInfo/info-1-bg.png");
+      }
+
+      &--2 {
+        background-image: url("../images/meridianInfo/info-2-bg.png");
+      }
+
+      &--3 {
+        background-image: url("../images/meridianInfo/info-3-bg.png");
+      }
+    }
+  }
+
   &__video {
     width: 152px;
     padding-left: 12px;
@@ -29,10 +88,13 @@
     right: 0;
     display: flex;
     justify-content: space-between;
+    border-radius: 8px;
+    overflow: hidden;
     &-content {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding-top: 3px;
     }
     &-text, &-length {
       font-size: 14px;
@@ -45,69 +107,24 @@
       opacity: .5;
     }
   }
-
-  &__item {
-    height: 220px;
-    align-items: center;
-    transition: .5s;
-    background-image: none;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    user-select: none;
-    .container {
-      display: flex;
-      height: 100%;
-      align-items: center;
-    }
-    &-title {
-      font-size: 32px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 130%;
-      min-width: 542px;
-      color: vars.$white;
-    }
-    &-text {
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 24px;
-      color: vars.$white;
-    }
-
-    &--with-buttons {
-      .meridianInfo__item-text {
-        margin-bottom: 16px;
-      }
-      .meridianInfo__item-buttons {
-        display: flex;
-        gap:8px;
-      }
-      .btn__meridianInfo {
-        color: vars.$white;
-        border: 1px solid rgba(255, 255, 255, 0.10);
-        padding: 8px 12px;
-        text-align: center;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 24px;
-      }
-    }
-
-    &:nth-child(2) {
-      border-top: 1px solid rgba(255, 255, 255, 0.10);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-      &:hover {
-        background-image: url("/src/images/meridianInfo/bg-122.png");
-      }
-    }
-    &:nth-child(3) {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-      &:hover {
-        background-image: url("/src/images/meridianInfo/bg-12.png");
-      }
-    }
-  }
 }
+
+//section.meridianInfo(data-scroll-section data-scroll-id="section7")
+//.container
+//h2.h2__title
+//span «Меридиан автоматизация»
+//span производит автоматизированное
+//span оборудование для:
+//.meridianInfo__video
+//.meridianInfo__video-content
+//.meridianInfo__video-text О компании
+//.meridianInfo__video-length 02:24
+//a.btn__play-video
+//img(src=require("../icons/play.svg") alt="play")
+//.meridianInfo__item
+//.meridianInfo__item-sector
+//img.meridianInfo__item-sector-img(src=require("../images/meridianInfo/info-1-bg.png") alt="img")
+//.meridianInfo__item-sector
+//img.meridianInfo__item-sector-img(src=require("../images/meridianInfo/info-1-bg.png") alt="img")
+//.meridianInfo__item
+//img.meridianInfo__item-img(src=require("../images/meridianInfo/info-1-bg.png") alt="img")

@@ -2,7 +2,172 @@
 @use "../vars";
 
 .products {
-  background: #F3F3F3;
+  &.fixed {
+    position: fixed;
+    z-index: 9999999;
+  }
+
+  .owl-carousel .owl-stage-outer {
+    padding-right: 118px;
+  }
+  .owl-carousel {
+    position: relative;
+    &:before {
+      position: absolute;
+      content: "1";
+      font-size: 700px;
+      line-height: 73%;
+      color: white;
+      top: -105px;
+      right: 189px;
+      z-index: -1;
+      font-family: sans-serif;
+      opacity: 0.5;
+    }
+  }
+
+
+  .container {
+    width: 100%;
+  }
+  background: linear-gradient(to bottom, #E5E6E9 79%, #ffffff 86%);
+  min-width: 100%;
+  min-height: 100dvh;
+
+  #polzunok {
+    position: absolute;
+    bottom: -50px;
+    z-index: 2;
+    width: 50%;
+    right: 50%;
+    transform: translateX(50%);
+    border-radius: 999px;
+    border: 1px solid #bbaeed !important;
+    &:before {
+      font-weight: 100;
+      content: "для просмотра 3D-модели используйте ползунок";
+      position: absolute;
+      bottom: -25px;
+      font-size: 11px;
+      right: 0;
+      color: #c7c7c7;
+    }
+    .ui-slider-handle {
+      width: 40px!important;
+      height: 40px!important;
+      border: none!important;
+      background-size: 40px!important;
+      border-radius: 999px!important;
+      top: -15px!important;
+      background-image: url('/src/icons/icon-map.png');
+      cursor: pointer;
+      outline: none;
+      &:active {
+        transform: scale(0.95);
+        outline: none;
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    max-width: 342px;
+    &-title {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 120%;
+      letter-spacing: -0.48px;
+      margin-bottom: 24px;
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      &-line {
+        &:nth-child(1) {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          color: #90949A;
+        }
+
+        &:nth-child(2) {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+        }
+      }
+      &-buttons {
+        display: flex;
+        gap: 4px;
+        button {
+          position: relative;
+          width: 48px;
+          height: 48px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: white;
+          border-radius: 999px;
+          transition: .1s;
+          //&.active {
+          //  background: vars.$blue;
+          //  svg path {
+          //    stroke: white;
+          //  }
+          //}
+
+          &:hover {
+            background: vars.$blue;
+            svg path {
+              stroke: white;
+            }
+
+            .products__content-item-button-tooltip {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+          svg {
+            max-width: 28px;
+            transition: .1s;
+            path {
+              stroke: vars.$blue;
+            }
+          }
+
+          .products__content-item-button-tooltip {
+            position: absolute;
+            bottom: -56px;
+            right: 50%;
+            transform: translateX(50%);
+            padding: 8px 10px;
+            background: vars.$blue;
+            border-radius: 4px;
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 130%;
+            letter-spacing: -0.24px;
+            max-width: 170px;
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s;
+          }
+        }
+      }
+    }
+  }
 
   h2 {
     margin-bottom: 12px;
@@ -209,6 +374,26 @@
     grid-area: 2 / 3 / 3 / 4;
     img {
       max-height: 200px;
+    }
+  }
+
+  //////////////
+
+  .owl-item img {
+    display: none!important;
+  }
+
+  .owl-item.active img {
+    display: block!important;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    img {
+      width: auto!important;
+      max-height: 600px;
     }
   }
 }

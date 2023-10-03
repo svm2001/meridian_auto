@@ -2,40 +2,23 @@
 @use "../vars";
 
 .residents {
+  padding-bottom: 0;
   &__list {
     display: flex;
     gap: 20px;
+    justify-content: space-between;
     counter-reset: number;
     &-item {
-      flex-basis: 25%;
-      padding: 24px;
-      background: #F3F3F3;
+      flex-basis: 8%;
       display: flex;
       align-items: flex-end;
-      min-height: 345px;
       position: relative;
       transition: .5s ease-in-out;
       &:hover {
         box-shadow: 0 0 11px 4px #ebebeb;
         border-radius: 8px;
-        img {
-          transform: translate(-50%, -50%) scale(1.15);
-        }
-      }
-      &:before {
-        counter-increment: number;
-        content: counter(number);
-        position: absolute;
-        font-size: 14px;
-        color: #90949A;
-        top: 24px;
-        left: 24px;
       }
       img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
         max-width: 177px;
         transition: ease-in-out .5s;
       }

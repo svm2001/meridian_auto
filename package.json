@@ -1,7 +1,7 @@
 {
-  "name": "new-world",
+  "name": "meridian",
   "version": "1.0.0",
-  "description": "",
+  "description": "meridian-auto",
   "main": "index.js",
   "scripts": {
     "serve": "webpack serve --mode development",

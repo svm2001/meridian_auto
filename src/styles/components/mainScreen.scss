@@ -6,7 +6,7 @@
   position: relative;
   padding-top: 156px!important;
   padding-bottom: 80px!important;
-  video {
+  #mainScreenVideo {
     position: absolute;
     top: 0;
     left: 0;
@@ -18,7 +18,7 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     height: 100%;
   }
 
@@ -26,6 +26,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 
   &__texture {

@@ -1,5 +1,5 @@
 mixin footer()
-  footer.footer(data-scroll-section data-scroll-id="footer")
+  footer.footer(data-scroll-section data-scroll-id="section11")
     .container
       .footer__main
         .footer__left
@@ -12,6 +12,12 @@ mixin footer()
               img(src=require("../../icons/social/youtube.svg") alt="youtube")
             a.footer__social-link
               img(src=require("../../icons/social/wa.svg") alt="wa")
+            a.footer__social-link
+              img(src=require("../../icons/social/dzen.svg") alt="dzen")
+          .footer__address
+            .footer__address-title Адреса
+            .footer__address-text г. Москва, Саввинская наб. 23 стр 1. БЦ «Московский шелк»
+            .footer__address-text г. Пермь, ул. Докучаева, д. 50
         .footer__links
           a.footer__link(href="javascript:void(0);") Продукты
           a.footer__link(href="javascript:void(0);") Кейсы
@@ -22,11 +28,13 @@ mixin footer()
           p Все условия и предложения уточняйте
             br
             | у менеджеров по телефону
+          a.footer__tel(href="mailto:sale@af.expert") sale@af.expert
           a.footer__tel(href="tel:+78007073187") 7 (800) 707-31-87
           a.btn__big-blue(href="javascript:void(0);") Узнать больше
       .footer__bot
         p Все права защищены. ООО «Автоматизиация Фабрик» © 2023
         a(href="javascript:void(0);") Политика конфиденциальности данных
+        a(href="javascript:void(0);") Пользовательское соглашение
         .footer__development
           span Сделано в&nbsp;
           a(href="https://kompot.bz") «Компот»
